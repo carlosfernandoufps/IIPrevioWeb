@@ -36,6 +36,12 @@ public class Conexion<T> {
 		T object = (T) em.find(c, id);
 		return object;
 	}
+	
+	public <E> T find2(E email) {
+		T object = (T) em.find(c, email);
+		return object;
+	}
+
 
 	public List<T> list() {
 		TypedQuery<T> consulta = em.createNamedQuery(c.getSimpleName() + ".findAll", c);
